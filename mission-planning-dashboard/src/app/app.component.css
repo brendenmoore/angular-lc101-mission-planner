@@ -1,4 +1,13 @@
 .box {
   display: flex;
-  padding: 10px;
+  justify-content: space-evenly;
+  max-width: 750px;
+  margin: auto;
+  padding: 24px;
+  background-color: beige;
+  color: black;
+}
+
+app-header {
+  text-align: center;
 }
