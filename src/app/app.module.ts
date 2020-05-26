@@ -1,11 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { CrewComponent } from './crew/crew.component';
-import { EquipmentComponent } from './equipment/equipment.component';
-import { ExperimentsComponent } from './experiments/experiments.component';
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./header/header.component";
+import { CrewComponent } from "./crew/crew.component";
+import { EquipmentComponent } from "./equipment/equipment.component";
+import { ExperimentsComponent } from "./experiments/experiments.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -13,12 +14,10 @@ import { ExperimentsComponent } from './experiments/experiments.component';
     HeaderComponent,
     CrewComponent,
     EquipmentComponent,
-    ExperimentsComponent
+    ExperimentsComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
