@@ -14,16 +14,39 @@ export class CrewComponent implements OnInit {
   ];
 
   selectedMember: crewMember;
+  editMemberInput: string;
+  nameInput: string;
 
   constructor() {}
 
   ngOnInit() {}
 
   add(memberName: string, isFirst: boolean) {
-    this.crew.push({ name: memberName, firstMission: isFirst });
+    if (this.isDuplicate(memberName)) {
+      alert("Error: Cannot allow duplicate names.");
+    } else {
+      this.crew.push({ name: memberName, firstMission: isFirst });
+      this.nameInput = "";
+    }
   }
   remove(member: crewMember) {
     let index = this.crew.indexOf(member);
     this.crew.splice(index, 1);
+  }
+  edit(member: crewMember) {
+    this.selectedMember = member;
+    this.editMemberInput = member.name;
+  }
+  save(name: string, member: crewMember) {
+    if (this.isDuplicate(name)) {
+      alert("Error: Cannot allow duplicate names.");
+    } else {
+      member["name"] = name;
+      this.selectedMember = null;
+      this.editMemberInput = "";
+    }
+  }
+  isDuplicate(name: string) {
+    return this.crew.filter((member) => member.name === name).length;
   }
 }
