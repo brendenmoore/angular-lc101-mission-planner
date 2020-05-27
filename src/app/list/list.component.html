@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let item of listArray">
+    <!-- Display -->
+    <span *ngIf="item !== selectedItem; else editItem" (click)="edit(item)">{{item}}
+      <button (click)="remove(item)">remove</button>
+    </span>
+    <!-- Edit -->
+    <ng-template #editItem>
+      <input [(ngModel)]="editItemInput" (keyup.enter)="save(editItemInput, selectedItem)" placeholder="item name" />
+      <button (click)="save(editItemInput, selectedItem)">save</button>
+    </ng-template>
+  </li>
+</ul>
+
+<input [(ngModel)]="newItemInput" type="text" placeholder="name" (keyup.enter)="add(newItemInput)" />
+<button (click)="add(newItemInput)">Add</button>

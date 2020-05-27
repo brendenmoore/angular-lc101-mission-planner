@@ -47,6 +47,10 @@ export class CrewComponent implements OnInit {
     }
   }
   isDuplicate(name: string) {
-    return this.crew.filter((member) => member.name === name).length;
+    if (this.selectedMember) {
+      return false;
+    } else {
+      return this.crew.filter((member) => member.name === name).length;
+    }
   }
 }

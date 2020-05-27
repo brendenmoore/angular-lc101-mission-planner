@@ -7,6 +7,7 @@ import { CrewComponent } from "./crew/crew.component";
 import { EquipmentComponent } from "./equipment/equipment.component";
 import { ExperimentsComponent } from "./experiments/experiments.component";
 import { FormsModule } from "@angular/forms";
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule } from "@angular/forms";
     CrewComponent,
     EquipmentComponent,
     ExperimentsComponent,
+    ListComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
