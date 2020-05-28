@@ -8,6 +8,7 @@
 /bazel-out
 
 # dependencies
+/mission-planning-dashboard/node_modules
 /node_modules
 
 # profiling files
