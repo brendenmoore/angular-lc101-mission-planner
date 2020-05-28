@@ -18,7 +18,7 @@ export class EquipmentComponent implements OnInit {
     { name: "Satellite", mass: 1200 },
     { name: "R2 Unit", mass: 32 },
   ];
-  cargoHold: object[] = [];
+  cargoHold: equipment[] = [];
   cargoMass: number = 0;
   maximumAllowedMass: number = 2000;
   maxItems: number = 10;
